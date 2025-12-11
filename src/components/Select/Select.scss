@@ -1,0 +1,118 @@
+@use '../../styles/variables' as *;
+
+.lib-select {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: system-ui, sans-serif;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+  }
+
+  &__native {
+    padding: 14px 32px 10px 12px;
+    border-radius: 4px;
+    border: 1px solid $color-border-default;
+    font-size: 0.875rem;
+    outline: none;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: $color-bg;
+    appearance: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    &:focus {
+      border-color: $color-primary;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    background: $color-bg;
+    padding: 0 4px;
+    font-size: 0.75rem;
+    color: $color-text-secondary;
+    pointer-events: none;
+
+    &[data-required='true']::after {
+      content: ' *';
+    }
+  }
+
+  &__native:focus + &__label {
+    color: $color-primary;
+
+    &::after {
+      color: $color-primary;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    color: $color-text-secondary;
+    pointer-events: none;
+  }
+
+  &__helper-text {
+    font-size: 0.75rem;
+    color: $color-text-secondary;
+    margin-top: 0;
+  }
+
+  &--error {
+    .lib-select__label,
+    .lib-select__helper-text {
+      color: $color-error;
+    }
+
+    .lib-select__label::after {
+      color: $color-error;
+    }
+
+    .lib-select__arrow {
+      color: $color-error;
+    }
+
+    .lib-select__native {
+      border-color: $color-error;
+
+      &:hover {
+        border-color: $color-error;
+      }
+
+      &:focus {
+        border-color: $color-error;
+        box-shadow: 0 0 0 0.5px $color-error;
+      }
+
+      &:focus + .lib-select__label {
+        color: $color-error;
+
+        &::after {
+          color: $color-error;
+        }
+      }
+    }
+  }
+}
+
+.lib-select:not(.lib-select--error) .lib-select__native:hover:not(:disabled):not(:focus) {
+  border-color: $color-border-hover;
+}

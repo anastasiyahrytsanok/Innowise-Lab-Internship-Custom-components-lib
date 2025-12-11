@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running ESLint..."
+npm run lint
+
+STATUS=$?
+
+if [ $STATUS -ne 0 ]; then
+  echo "❌ ESLint failed. Push aborted."
+  exit 1
+fi
+
+echo "✔ ESLint passed. Proceeding with push."
+exit 0

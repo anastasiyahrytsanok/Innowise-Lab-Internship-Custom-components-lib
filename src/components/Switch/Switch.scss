@@ -1,0 +1,77 @@
+@use '../../styles/variables' as *;
+
+.switch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 30px;
+}
+
+.lib-switch {
+  display: inline-flex;
+  align-items: center;
+  font-family: system-ui, sans-serif;
+
+  &__root {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__native {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__track {
+    width: 40px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: $color-border-dark;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $color-bg;
+    box-shadow: 0 0 0 0.5px $color-shadow;
+  }
+
+  &__native:checked + &__track {
+    background-color: $color-primary-50;
+  }
+
+  &__native:checked + &__track .lib-switch__thumb {
+    transform: translateX(20px);
+    background-color: $color-primary-light;
+  }
+
+  &:not(.lib-switch--disabled):hover .lib-switch__thumb {
+    box-shadow: 0 0 0 7px $color-shadow;
+  }
+
+  &--disabled {
+    opacity: 0.7;
+
+    .lib-switch__native {
+      cursor: not-allowed;
+    }
+
+    .lib-switch__track {
+      background-color: $color-border-default;
+      cursor: not-allowed;
+    }
+
+    .lib-switch__thumb {
+      background-color: $color-bg-hovered;
+      box-shadow: none;
+    }
+  }
+}

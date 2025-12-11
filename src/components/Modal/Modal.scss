@@ -1,0 +1,73 @@
+@use '../../styles/variables' as *;
+
+.lib-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $color-border-dark;
+}
+
+.lib-modal__content {
+  background-color: $color-bg;
+  border-radius: 8px;
+  padding: 15px 24px 24px;
+  box-shadow: 0 10px 30px $color-border-default;
+  border: solid 2px $color-border-black;
+
+  min-width: 320px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  font-family: system-ui, sans-serif;
+}
+
+.lib-demo-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid $color-primary;
+  background: $color-primary;
+  color: $color-bg;
+  cursor: pointer;
+  font-size: 0.875rem;
+
+  &:hover {
+    background: $color-primary-dark;
+  }
+}
+
+.lib-demo-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.lib-demo-btn-secondary {
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid $color-border-light;
+  background: $color-bg;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-bg-hovered;
+  }
+}
+
+.lib-demo-btn-primary {
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid $color-primary;
+  background: $color-primary;
+  color: $color-bg;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-primary-dark;
+  }
+}

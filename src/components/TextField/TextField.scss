@@ -1,0 +1,88 @@
+@use '../../styles/variables' as *;
+
+.lib-text-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: system-ui, sans-serif;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    padding: 14px 12px 10px 12px;
+    border-radius: 4px;
+    border: 1px solid $color-border-default;
+    font-size: 0.875rem;
+    outline: none;
+    width: max-content;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 0.5px $color-primary;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    background: $color-bg;
+    padding: 0 4px;
+    font-size: 0.75rem;
+    color: $color-text-secondary;
+    pointer-events: none;
+
+    &[data-required='true']::after {
+      content: ' *';
+    }
+  }
+
+  &__input:focus + &__label {
+    color: $color-primary;
+  }
+
+  &__helper-text {
+    font-size: 0.75rem;
+    color: $color-text-secondary;
+    margin-top: 0;
+  }
+
+  &--error {
+    .lib-text-field__label,
+    .lib-text-field__helper-text {
+      color: $color-error;
+    }
+
+    .lib-text-field__label::after {
+      color: $color-error;
+    }
+
+    .lib-text-field__input {
+      border-color: $color-error;
+
+      &:hover {
+        border-color: $color-error;
+      }
+
+      &:focus {
+        border-color: $color-error;
+        box-shadow: 0 0 0 0.5px $color-error;
+      }
+
+      &:focus + .lib-text-field__label {
+        color: $color-error;
+      }
+    }
+  }
+}
+
+.lib-text-field:not(.lib-text-field--error) .lib-text-field__input:hover:not(:disabled):not(:focus) {
+  border-color: $color-border-hover;
+}
