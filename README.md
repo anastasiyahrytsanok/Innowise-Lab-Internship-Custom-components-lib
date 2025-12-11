@@ -30,6 +30,7 @@ Example Webpack rule:
 Run locally:
 
 npm install
+
 npm start
 
 Run Storybook:
