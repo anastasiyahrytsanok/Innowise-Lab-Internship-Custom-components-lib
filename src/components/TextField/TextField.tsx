@@ -1,4 +1,3 @@
-import React from 'react';
 import type { TextFieldProps } from './TextField.types';
 import './TextField.scss';
 import { createRootClassNameFromArray } from '../../utils';
