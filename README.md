@@ -13,7 +13,18 @@ Use in your project:
 import { Button } from "@anastasiyahrytsanok/custom-components-lib";
 
 function App() {
-  return <Button label="Click me" />;
+  return <Button variant="contained">Click me</Button>;
+}
+
+Make sure your project supports SCSS (required by the library):
+
+npm install sass style-loader css-loader sass-loader --save-dev
+
+Example Webpack rule:
+
+{
+  test: /\.s[ac]ss$/i,
+  use: ["style-loader", "css-loader", "sass-loader"],
 }
 
 Run locally:
