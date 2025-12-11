@@ -38,6 +38,7 @@
     font-size: 0.75rem;
     color: $color-text-secondary;
     pointer-events: none;
+    border-radius: 2px;
 
     &[data-required='true']::after {
       content: ' *';

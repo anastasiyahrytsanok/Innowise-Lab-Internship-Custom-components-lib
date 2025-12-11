@@ -26,6 +26,7 @@
     appearance: none;
     cursor: pointer;
     transition: border-color 0.2s ease;
+    color: $color-black;
 
     &:disabled {
       cursor: not-allowed;
