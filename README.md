@@ -20,6 +20,8 @@ Make sure your project supports SCSS (required by the library):
 
 npm install sass style-loader css-loader sass-loader --save-dev
 
+Necessary React version: 18-19
+
 Example Webpack rule:
 
 {
