@@ -1,10 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-/** @type {import('webpack').Configuration} */
 module.exports = {
   mode: 'development',
-  entry: './demo/index.tsx', // демо-вход
+  entry: './demo/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash].js',
@@ -21,7 +20,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.s?css$/, // .css и .scss
+        test: /\.s?css$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
