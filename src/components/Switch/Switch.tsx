@@ -10,7 +10,11 @@ export const Switch = ({
   id,
   ...rest
 }: SwitchProps) => {
-  const rootClassName = createRootClassNameFromArray(['lib-switch', disabled ? 'lib-switch--disabled' : '', className]);
+  const rootClassName = createRootClassNameFromArray([
+    'lib-switch',
+    disabled ? 'lib-switch--disabled' : '',
+    className,
+  ]);
 
   return (
     <label className={rootClassName} htmlFor={id}>

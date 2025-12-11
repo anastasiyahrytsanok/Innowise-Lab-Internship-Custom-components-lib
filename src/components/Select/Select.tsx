@@ -13,7 +13,11 @@ export const Select = ({
   multiple = false,
   ...rest
 }: SelectProps) => {
-  const rootClassName = createRootClassNameFromArray(['lib-select', error ? 'lib-select--error' : '', className]);
+  const rootClassName = createRootClassNameFromArray([
+    'lib-select',
+    error ? 'lib-select--error' : '',
+    className,
+  ]);
 
   return (
     <div className={rootClassName}>

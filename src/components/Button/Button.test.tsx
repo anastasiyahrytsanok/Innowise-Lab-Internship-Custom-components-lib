@@ -103,7 +103,7 @@ describe('Button', () => {
     );
 
     const button = screen.getByRole('button', { name: /button/i });
-    
+
     expect(button).toHaveAttribute('type', 'submit');
     expect(button).toHaveAttribute('aria-label', 'submit button');
   });

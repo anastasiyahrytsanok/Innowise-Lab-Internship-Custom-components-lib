@@ -52,7 +52,7 @@ export const CHECKBOX_TEXT = {
     WITH_HELPER_TEXT: 'With helper text',
     ACCEPT_TERMS: 'Accept terms',
     CONTROLLED_CHECKBOX: 'Controlled checkbox',
-  }
+  },
 } as const;
 
 export const SELECT_TEXT = {
